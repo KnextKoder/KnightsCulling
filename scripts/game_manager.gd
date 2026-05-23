@@ -12,14 +12,15 @@ func initialize_level():
 
 func add_coin():
 	coins += 1
-	print("You collected %d coins" % coins)
 
 func spend_coin():
 	if coins > 0:
 		coins -= 1
-		print("Coin spent! Remaining: ", coins)
 		return true
 	return false
+	
+func reset_coins():
+	coins = 5
 
 func dino_killed():
 	dinos_remaining -= 1

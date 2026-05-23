@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 # Update text every frame based on GameManager variables
 	coin_label.text = "Budget: " + str(GameManager.coins)
 	dino_label.text = "Dinos Left: " + str(GameManager.dinos_remaining)

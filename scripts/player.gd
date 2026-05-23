@@ -56,10 +56,8 @@ func _physics_process(delta: float) -> void:
 			await get_tree().physics_frame
 	
 			var areas = sword_area.get_overlapping_areas()
-			print("Sword saw ", areas.size(), " areas")
 
 			for area in areas:
-				print("Sword hit: ", area.name)
 				if area.name == "HurtBox":
 					var dino = area.get_parent()
 					if dino.has_method("take_damage"):
