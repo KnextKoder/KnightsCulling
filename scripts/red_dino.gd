@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-const SPEED = 65
-const CHASE_SPEED = 100.0
+const SPEED = 60
+const CHASE_SPEED = 70.0
 var direction = 1
 var is_idling = false
 var is_chasing = false
 var player: CharacterBody2D = null
+var is_hurt = false
+var damage_allowance = 2
 
 @onready var red_dino: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
@@ -59,8 +61,32 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 		player = null
 
 func take_damage():
-	GameManager.dino_killed()
-	queue_free() # For now, the dino just disappears instantly
+	# 1. If he's already hurt, don't let him take damage again yet
+	if is_hurt: 
+		print("Dino is currently invincible, ignoring hit")
+		return 
+	
+	damage_allowance -= 1
+	print("HIT! Damage Allowance left: ", damage_allowance)
+	
+	if damage_allowance <= 0:
+		GameManager.dino_killed()
+		queue_free()
+	else:
+		_trigger_hurt_state()
+
+
+func _trigger_hurt_state():
+	is_hurt = true
+	modulate = Color(10, 1, 1) # Turn red
+	
+	# Instead of a simple await, let's use a SceneTreeTimer 
+	# that doesn't care if other logic is running
+	await get_tree().create_timer(0.5).timeout
+	
+	is_hurt = false
+	modulate = Color(1, 1, 1) # Back to normal
+	print("Dino can be hit again now")
 
 func _on_idle_timer_timeout() -> void:
 	is_idling = false

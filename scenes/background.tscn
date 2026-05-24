@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ds6ju2cmx6ufk"]
+
+[ext_resource type="Texture2D" uid="uid://bvqqjo7gwcsqo" path="res://assets/sprites/background.png" id="1_bkp1e"]
+
+[node name="background" type="Node" unique_id=1671768883]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1825781272]
+layer = -10
+follow_viewport_enabled = true
+
+[node name="MountainRange" type="Parallax2D" parent="CanvasLayer" unique_id=1715623226]
+z_index = -100
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(348, 0.25)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MountainRange" unique_id=140892554]
+texture_filter = 1
+position = Vector2(74, 209)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_bkp1e")
+centered = false

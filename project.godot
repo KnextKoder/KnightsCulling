@@ -24,6 +24,10 @@ buses/default_bus_layout="uid://bsebsrjvgwbwh"
 GameManager="*uid://b2dcfjopva7f2"
 Music="*uid://2y5sktk3o54f"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 dinos="Dino Mobs"

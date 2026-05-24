@@ -53,19 +53,23 @@ func _physics_process(delta: float) -> void:
 			slash_sprite.show()
 			slash_sprite.play("slash")
 
-			await get_tree().physics_frame
+			var hit_landed = false
+			var attack_timer = 0.0
+			var attack_duration = 0.3
 	
-			var areas = sword_area.get_overlapping_areas()
-
-			for area in areas:
-				if area.name == "HurtBox":
-					var dino = area.get_parent()
-					if dino.has_method("take_damage"):
-						dino.take_damage()
+			while attack_timer < attack_duration:
+				if not hit_landed:
+					var areas = sword_area.get_overlapping_areas()
+					for area in areas:
+						if area.name == "HurtBox":
+							var dino = area.get_parent()
+							if dino.has_method("take_damage") and not dino.is_hurt:
+								dino.take_damage()
+								hit_landed = true
 			
-			# 2. WAIT for the swing to finish
-			await get_tree().create_timer(0.3).timeout
-			
+				attack_timer += get_process_delta_time()
+				await get_tree().process_frame
+				
 			# 3. Clean up
 			slash_sprite.hide()
 			sword_hitbox.disabled = true

@@ -109,6 +109,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahcko"]
+radius = 13.038404
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhmff"]
 size = Vector2(23, 20)
@@ -116,8 +117,7 @@ size = Vector2(23, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_805dl"]
 radius = 87.005745
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugdvr"]
-size = Vector2(27, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ugdvr"]
 
 [node name="RedDino" type="CharacterBody2D" unique_id=1396534779 groups=["dinos"]]
 script = ExtResource("1_ugdvr")
@@ -132,7 +132,7 @@ frame_progress = 0.8237029
 [node name="Killzone" parent="." unique_id=1772270576 instance=ExtResource("3_5a8oj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1075927201]
-position = Vector2(0, 6)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ahcko")
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1140278455]
@@ -152,6 +152,7 @@ target_position = Vector2(15, 0)
 one_shot = true
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=2117326472]
+visible = false
 collision_layer = 4
 collision_mask = 0
 
@@ -160,6 +161,7 @@ position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_rhmff")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=113341532]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -167,8 +169,9 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_805dl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630692187]
-position = Vector2(-0.5, 4)
-shape = SubResource("RectangleShape2D_ugdvr")
+visible = false
+position = Vector2(-1, 6)
+shape = SubResource("CircleShape2D_ugdvr")
 
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
