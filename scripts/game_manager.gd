@@ -4,8 +4,6 @@ var coins: int = 5
 var total_coins_in_level: int = 0
 var dinos_remaining: int = 0
 
-
-# calls when the level starts
 func initialize_level():
 	dinos_remaining = get_tree().get_nodes_in_group("dinos").size()
 	total_coins_in_level = get_tree().get_nodes_in_group("coins").size()
