@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://p41ptx56njlk"]
+
+[ext_resource type="PackedScene" uid="uid://b7qs3l2ulqid7" path="res://scenes/platform.tscn" id="1_mp1lo"]
+
+[node name="Ice Platform" unique_id=2130173153 instance=ExtResource("1_mp1lo")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1183019971]
+region_rect = Rect2(17, 48, 30, 8)

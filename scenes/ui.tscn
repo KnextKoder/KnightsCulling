@@ -35,3 +35,24 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_x4jx1")
 theme_override_font_sizes/font_size = 32
 text = "Dinos Left: 0"
+
+[node name="WinLabel" type="Label" parent="Control" unique_id=2140379425]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -928.0
+offset_top = 207.0
+offset_right = -338.0
+offset_bottom = 290.0
+grow_horizontal = 0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("2_x4jx1")
+theme_override_font_sizes/font_size = 40
+text = "You Win
+Click to restart"
+horizontal_alignment = 1
+uppercase = true
+
+[connection signal="gui_input" from="Control/WinLabel" to="." method="_on_win_label_gui_input"]

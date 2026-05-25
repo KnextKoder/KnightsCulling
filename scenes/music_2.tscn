@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://deih04fkx20kx"]
+
+[ext_resource type="AudioStream" uid="uid://drcvg224ys1cb" path="res://assets/music/level2.mp3" id="1_b3cln"]
+
+[node name="Music2" type="AudioStreamPlayer2D" unique_id=528485007]
+stream = ExtResource("1_b3cln")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

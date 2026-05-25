@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cki7nen3ffoap" path="res://scenes/killzone.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://b7qs3l2ulqid7" path="res://scenes/platform.tscn" id="9_kvpfn"]
 [ext_resource type="FontFile" uid="uid://hnkr10iwqbct" path="res://assets/fonts/PixelOperator8.ttf" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://2y5sktk3o54f" path="res://scenes/music.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://b8kxgg7iyi2kv" path="res://scenes/portal.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_yqjtg")
@@ -235,6 +237,9 @@ distance = -6.0
 
 [node name="Game" type="Node2D" unique_id=2147148582]
 
+[node name="Portal" parent="." unique_id=1047357894 instance=ExtResource("13_kvuet")]
+position = Vector2(1738, -16)
+
 [node name="background" parent="." unique_id=1671768883 instance=ExtResource("1_kvpfn")]
 
 [node name="GameManager" type="Node" parent="." unique_id=1818836712]
@@ -353,3 +358,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1635934269]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
+
+[node name="Music" parent="." unique_id=178492158 instance=ExtResource("12_dinhu")]
+
+[connection signal="ready" from="Portal" to="Portal" method="_on_ready"]

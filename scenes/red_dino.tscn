@@ -115,7 +115,7 @@ radius = 13.038404
 size = Vector2(23, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_805dl"]
-radius = 87.005745
+radius = 73.02739
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugdvr"]
 
@@ -152,7 +152,6 @@ target_position = Vector2(15, 0)
 one_shot = true
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=2117326472]
-visible = false
 collision_layer = 4
 collision_mask = 0
 
@@ -161,7 +160,6 @@ position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_rhmff")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=113341532]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -169,7 +167,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_805dl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630692187]
-visible = false
 position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_ugdvr")
 
