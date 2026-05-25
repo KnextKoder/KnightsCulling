@@ -10,10 +10,19 @@ config_version=5
 
 [application]
 
-config/name="Knight'sCulling"
+config/name="Knight's Culling"
+config/description="The Kingdom is overrun, the King is desperate, and you... are on a strict budget.
+Armed with the legendary \"Dragon Blood\" blade, you are the realm's last hope. But ancient power isn't free. Every swing of your relic costs cold, hard cash.
+
+Combat with a Cost: Every strike drains your purse.
+Resource Management: Scavenge for coins to keep the fight alive.
+Extinction Event: Clear the floors, slay the dinos, and don't go broke trying.
+
+Can you save the Kingdom without filing for bankruptcy?"
+config/version="0.1.0.0"
 run/main_scene="uid://b68i6sevx0jt6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bjuj2ubpet8gr"
 
 [audio]
 
@@ -66,3 +75,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
