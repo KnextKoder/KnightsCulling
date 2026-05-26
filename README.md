@@ -1,4 +1,4 @@
-# KNIGHT'S CULLING
+# KNIGHT'S CULLING [A GAMEJAM SUBMISSION](https://itch.io/jam/mini-jam-211-dinosaurs/rate/4609762) PROTOTYPE
 
 The Kingdom is overrun, the King is desperate, and you... are on a strict budget.
 Armed with the legendary "Dragon Blood" blade, you are the realm's last hope. But ancient power isn't free. Every swing of your relic costs cold, hard cash.
