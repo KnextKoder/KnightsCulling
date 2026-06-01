@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1rxo8083kqer" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="FontFile" uid="uid://du8huek7tpac1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_x4jx1"]
+[ext_resource type="PackedScene" uid="uid://br1iugrmt1ga" path="res://scenes/mobile_controls.tscn" id="3_yev5y"]
 
 [node name="UI" type="CanvasLayer" unique_id=539312008]
 script = ExtResource("1_nt7q6")
@@ -54,5 +55,7 @@ text = "You Win
 Click to restart"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="MobileControls" parent="." unique_id=1716662783 instance=ExtResource("3_yev5y")]
 
 [connection signal="gui_input" from="Control/WinLabel" to="." method="_on_win_label_gui_input"]

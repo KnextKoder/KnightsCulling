@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://br1iugrmt1ga"]
+
+[ext_resource type="Texture2D" uid="uid://ckr8y3i0h233j" path="res://assets/sprites/left button.png" id="1_k8ypl"]
+[ext_resource type="Texture2D" uid="uid://dxkowphy45ka8" path="res://assets/sprites/right button.png" id="2_4rjyr"]
+[ext_resource type="Texture2D" uid="uid://dvw7vk2aliydh" path="res://assets/sprites/circle button.png" id="3_y1te1"]
+[ext_resource type="Texture2D" uid="uid://67mic3bk8cex" path="res://assets/sprites/x button.png" id="4_puaky"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7u83"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yr8f1"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g8qj"]
+radius = 386.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kth8y"]
+radius = 382.36
+
+[node name="MobileControls" type="Control" unique_id=1716662783]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovementGroup" type="Control" parent="." unique_id=173667585]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="LeftButton" type="TouchScreenButton" parent="MovementGroup" unique_id=398745854]
+position = Vector2(-32.999996, -125)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_k8ypl")
+shape = SubResource("CircleShape2D_l7u83")
+passby_press = true
+action = "left"
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="MovementGroup" unique_id=1977869764]
+position = Vector2(155.99998, -128)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_4rjyr")
+shape = SubResource("CircleShape2D_yr8f1")
+passby_press = true
+action = "right"
+visibility_mode = 1
+
+[node name="ActionGroup" type="Control" parent="." unique_id=1827129622]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="JumpButton" type="TouchScreenButton" parent="ActionGroup" unique_id=1007724334]
+position = Vector2(-150, -238.00003)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_y1te1")
+shape = SubResource("CircleShape2D_0g8qj")
+action = "jump"
+visibility_mode = 1
+
+[node name="AttackButton" type="TouchScreenButton" parent="ActionGroup" unique_id=2072561559]
+position = Vector2(-303.99997, -149.99998)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_puaky")
+shape = SubResource("CircleShape2D_kth8y")
+action = "attack"
+visibility_mode = 1
